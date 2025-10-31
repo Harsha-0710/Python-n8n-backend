@@ -13,13 +13,16 @@ def get_payload():
         return jsonify({"error": "No 'name' field provided"}), 400
     
     name = data["name"]
+    link = data["link"]
     updated_name = name + " - processed by Flask API"
 
     return jsonify({
         "message": "Payload received successfully",
+        "link": link,
         "updated_name": updated_name
     }), 200
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+
